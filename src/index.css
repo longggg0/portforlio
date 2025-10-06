@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
+.active-nav {
+  color: #f97316; /* Tailwind's orange-500 */
+  position: relative;
+  font-weight: 600;
+}
+
+.active-nav::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: #f97316;
+  transition: all 0.3s ease-in-out;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink {
+    0%, 100% {
+    opacity: 1;
+  }
+}
+
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #19f398;
+  white-space: nowrap;
+  width: fit-content;
+  animation:
+    typing 4s steps(20, end) infinite ,
+    blink 0.7s step-end infinite;
+}
